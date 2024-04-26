@@ -188,4 +188,52 @@ J-type instructions are used for unconditional jumps, with the jump target addre
    Bit pattern:
 |  0000000   |  00100 |  00010  |  010  |   01011  |  0110011  |
   
-  
+### 7. addi r12, r4, 5
+
+    Type: I
+
+   Bit pattern:
+|  000000000101   |  00100 |  000  |  01100  |   0010011  |
+
+### 8. sw r3, r1, 2
+
+    Type: I
+
+   Bit pattern:
+|  000000000010   |  00001 |  010  |  00011  |   0010011  |
+
+### 9. lw r13, r1, 2
+
+    Type: I
+
+   Bit pattern:
+|  000000000010   |  00001 |  010  |  01101  |   0000011  |
+
+### 10. beq r0, r0, 15
+
+    Type: B
+
+   Bit pattern:
+| 0 | 000000 |  00000 |  00000 |  000  |  0111 | 0 |  1100011 |
+
+### 11. bne r0, r1, 20
+
+    Type: B
+
+   Bit pattern:
+| 0 | 000000 |  00001 |  00000 |  001  |  1010 | 0 |  1100011 |
+
+### 12. sll r15, r1, r2 (2)
+
+    Type: R
+
+   Bit pattern:
+|  00000010  |  00010 |  00001  |  001  |   01111  |  0110011  |
+
+### 13. srl r16, r14, r2 (2)
+
+    Type: R
+
+   Bit pattern:
+|  00000010  |  00010 |  01110  |  101  |   10000 |  0110011  |
+
