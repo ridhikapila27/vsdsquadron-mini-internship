@@ -142,3 +142,13 @@ U-type instructions are used for operations such as unconditional jumps (`jal`) 
 - **`J` (1 bit):** This bit indicates that it's a J-type instruction.
 
 J-type instructions are used for unconditional jumps, with the jump target address being calculated by combining bits from the instruction itself and the program counter (PC). The immediate offset value is calculated by concatenating bits from different parts of the instruction, followed by sign extension to form a 21-bit signed offset. Examples of J-type instructions include `jal` (jump and link), which jumps to a specified target address and stores the return address in a register.
+
+
+## IDENTIFICATION OF INSTRUCTION TYPE AND ITS CORRESPONDING BIT PATTERN
+1. add r6, r2, r1
+   Type: R
+   
+  31       25 24     20 19    15 14   12 11     7 6       0
++------------+--------+--------+--------+--------+--------+
+|  0000000   |  00010 |  00001 |   000  | 00110  | 0110011 | 
++------------+--------+--------+--------+--------+--------+
