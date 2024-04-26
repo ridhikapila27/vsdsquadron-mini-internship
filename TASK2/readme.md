@@ -145,10 +145,47 @@ J-type instructions are used for unconditional jumps, with the jump target addre
 
 
 ## IDENTIFICATION OF INSTRUCTION TYPE AND ITS CORRESPONDING BIT PATTERN
-1. add r6, r2, r1
-   Type: R
-   
-  31       25 24     20 19    15 14   12 11     7 6       0
-+------------+--------+--------+--------+--------+--------+
-|  0000000   |  00010 |  00001 |   000  | 00110  | 0110011 | 
-+------------+--------+--------+--------+--------+--------+
+### 1. add r6, r2, r1
+
+    Type: R
+
+   Bit pattern:
+|  0000000   |  00001 |  00010  |  000  |   00110  |  0110011  |
+
+### 2. sub r7, r1, r2
+
+    Type: R
+
+   Bit pattern:
+|  0000000   |  00010 |  00001  |  000  |   00111  |  0110011  |
+  
+
+### 3. and r8, r1, r3
+
+    Type: R
+
+   Bit pattern:
+|  0000000   |  00011 |  00001  |  111  |   01000  |  0110011  |
+  
+### 4. or r9, r2, r5
+
+    Type: R
+
+   Bit pattern:
+|  0000000   |  00101 |  00010  |  110  |   01001  |  0110011  |
+
+### 5. xor r10, r1, r4
+
+    Type: R
+
+   Bit pattern:
+|  0000000   |  00100 |  00001  |  100  |   01010  |  0110011  |
+
+### 6. slt r11, r2, r4
+
+    Type: R
+
+   Bit pattern:
+|  0000000   |  00100 |  00010  |  010  |   01011  |  0110011  |
+  
+  
