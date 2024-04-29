@@ -8,7 +8,7 @@
 
 # YOSYS
 
-<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/yosys.JPG?raw=true" />
+<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK1/yosys.JPG?raw=true" />
 
 # GTKWAVE
 
