@@ -1,6 +1,6 @@
 # UBUNTU
 
-<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/ubuntu.JPG?raw=true" />
+<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK1/ubuntu.JPG?raw=true" />
 
 # RISC-V GNU TOOLCHAIN
 
