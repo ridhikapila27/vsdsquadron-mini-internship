@@ -28,3 +28,17 @@ Steps to compile any C code in UBUNTU:
    ```
    The C code can be read in terminal using this command.
 <img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK3/cat.JPG?raw=true" />
+
+   ```
+   riscv32-unknown-elf-gcc -o sum1ton.o sum1ton.c
+   ls -ltr sum1ton.o
+   ```
+2. Open another terminal window and type the following instructions:
+   
+   ```
+   riscv32-unknown-elf-objdump -d sum1ton.o sum1ton.c
+   riscv32-unknown-elf-objdump -d sum1ton.o sum1ton.c | less
+   
+   ```
+   
+
