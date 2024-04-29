@@ -16,4 +16,4 @@
 
 # IVERILOG
 
-<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/iverilog.JPG?raw=true" />
+<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK1/iverilog.JPG?raw=true" />
