@@ -40,5 +40,6 @@ Steps to compile any C code in UBUNTU:
    riscv32-unknown-elf-objdump -d sum1ton.o sum1ton.c | less
    
    ```
-   
+<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK3/objdump.JPG?raw=true" />
+
 
