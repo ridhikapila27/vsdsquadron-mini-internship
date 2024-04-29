@@ -46,3 +46,7 @@ riscv32-unknown-elf-objdump -d sum1ton.o sum1ton.c | less
   ```
 <img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK3/ob_2.JPG?raw=true" />
 
+  ```
+  /main
+  ```
+<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK3/ob_2.JPG?raw=true" />
