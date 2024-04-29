@@ -27,4 +27,4 @@ Steps to compile any C code in UBUNTU:
    cat sum1ton.c
    ```
    The C code can be read in terminal using this command.
-<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK3/c_program.JPG?raw=true" />
+<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK3/cat.JPG?raw=true" />
