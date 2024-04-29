@@ -12,7 +12,7 @@
 
 # GTKWAVE
 
-<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/gtkwave.JPG?raw=true" />
+<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK1/gtkwave.JPG?raw=true" />
 
 # IVERILOG
 
