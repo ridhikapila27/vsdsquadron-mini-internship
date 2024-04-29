@@ -17,3 +17,14 @@ Steps to compile any C code in UBUNTU:
 ```
 
 <img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK3/c_program.JPG?raw=true" />
+
+
+## RISC-V OBJDUMP:
+
+1. Open terminal and type the following instructions:
+
+   ```
+   cat sum1ton.c
+   ```
+   The C code can be read in terminal using this command.
+<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK3/c_program.JPG?raw=true" />
