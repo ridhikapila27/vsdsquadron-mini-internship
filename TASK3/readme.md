@@ -15,3 +15,5 @@ Steps to compile any C code in UBUNTU:
    gcc sum1ton.c
    ./a.out
 ```
+
+<img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK3/c_program.JPG?raw=true" />
