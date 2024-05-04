@@ -11,4 +11,5 @@ Spike is a RISC-V ISA simulator written in C++ that models a RISC-V core and cac
 ## SPIKE SIMULATION WITH Ofast:
 This optimization flag is typically used to enable aggressive optimization settings, often sacrificing strict compliance with language standards or precision in favor of maximizing performance.The resulting code may execute faster but might not strictly adhere to the original source code semantics, especially in cases involving floating-point arithmetic.
 
+img src= <"https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/Ofast.JPG?raw=true"/>;
 
