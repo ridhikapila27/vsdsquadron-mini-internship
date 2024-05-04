@@ -21,14 +21,14 @@ This optimization flag is typically used to enable aggressive optimization setti
    until pc 0 100b0
    spike -d pk sum1ton.o
    ```
-<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/Ofast.JPG?raw=true"/>;
+<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/Ofast.JPG?raw=true"/>
 
 3. Open another terminal window
    ```
    riscv64-unknown-elf-objdump -d  sum1ton.o | less
    main
    ```
-<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/Ofast_main.JPG?raw=true"/>;
+<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/Ofast_main.JPG?raw=true"/>
 
 ## SPIKE SIMULATION WITH -O1:
 This optimization flag specifies a lower level of optimization compared to -Ofast. It enables basic optimizations aimed at improving code performance without overly sacrificing compilation time or code clarity. -O1 optimizations typically include basic operations like constant folding, dead code elimination, and simple loop optimizations.
