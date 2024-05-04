@@ -43,11 +43,13 @@ This optimization flag specifies a lower level of optimization compared to -Ofas
    until pc 0 100b0
    spike -d pk sum1ton.o
    ```
-<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/O1.JPG?raw=true"/>
+ <img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/O1.JPG?raw=true"/>
 
 3. Open another terminal window
    ```
    riscv64-unknown-elf-objdump -d  sum1ton.o | less
    main
    ```
-   
+   <img src = "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/O1_main.JPG?raw=true"/>
+
+When using Spike for simulation, these optimization flags affect the performance characteristics of the compiled code running within the simulated RISC-V environment. The choice between -Ofast and -O1 depends on the specific requirements of the software being compiled, balancing between code execution speed and adherence to language standards or code clarity.
