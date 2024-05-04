@@ -28,4 +28,4 @@ This optimization flag is typically used to enable aggressive optimization setti
    riscv64-unknown-elf-objdump -d  sum1ton.o | less
    main
    ```
-<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/Ofast.JPG?raw=true"/>;
+<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK4/Ofast_main.JPG?raw=true"/>;
