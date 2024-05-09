@@ -21,7 +21,7 @@ https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/1.p
 <img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/6.png?raw=true"/>
 
 # Instruction 7:addi r12,r4,5
-<img src= ""/>
+<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/7.png?raw=true"/>
 
 # Instruction 8:sw r3,r1,2
 <img src= ""/>
