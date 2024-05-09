@@ -35,13 +35,13 @@
 <img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/11.png?raw=true"/>
 
 # Instruction 12:sll r15,r1,r2(2)
-<img src= ""/>
+<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/12.png?raw=true"/>
 
 # Instruction 13:srl r16,r14,r2(2)
-<img src= ""/>
+<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/13.png?raw=true"/>
 
 # Full 5-stage instruction pipeline and pc-increment description Waveform:
-<img src= ""/>
+<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/14.png?raw=true"/>
 
 
 
