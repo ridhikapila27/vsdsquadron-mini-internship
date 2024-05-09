@@ -15,7 +15,7 @@ https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/1.p
 <img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/4.png?raw=true"/>
 
 # Instruction 5:xor r10,r1,r4
-<img src= ""/>
+<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/5.png?raw=true"/>
 
 # Instruction 6:slt r11,r2,r4
 <img src= ""/>
