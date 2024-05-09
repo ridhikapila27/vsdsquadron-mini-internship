@@ -6,7 +6,7 @@
 <img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/1.png?raw=true"/>
 https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/1.png?raw=true
 # Instruction 2:sub r7,r1,r2
-<img src= ""/>
+<img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK5/2.png?raw=true"/>
 
 # Instruction 3:and r8,r1,r3
 <img src= ""/>
