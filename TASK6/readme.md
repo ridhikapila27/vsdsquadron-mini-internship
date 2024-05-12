@@ -19,9 +19,9 @@ This project makes use of LED lights for indication purpose and a VSD Squadron M
 
 ## HARDWARE CONNECTIONS
  LED Connections: 
-   * Positive end (Anode) connected to GPIO Pin 6 of VSDSquadron Mini.
-   * Positive end (Anode) connected to GPIO Pin 5 of VSDSquadron Mini.
-   * Positive end (Anode) connected to GPIO Pin 4 of VSDSquadron Mini.
+   * Positive end (Anode) of LED 1 connected to GPIO Pin 6 of VSDSquadron Mini.
+   * Positive end (Anode) of LED 2 connected to GPIO Pin 5 of VSDSquadron Mini.
+   * Positive end (Anode) of LED 3 connected to GPIO Pin 4 of VSDSquadron Mini.
    * Negative end (Cathode) connected to GND pin of VSDSquadron Mini.
    
       
