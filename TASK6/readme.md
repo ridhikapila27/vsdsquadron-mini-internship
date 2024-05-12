@@ -17,9 +17,21 @@ This project makes use of LED lights for indication purpose and a VSD Squadron M
    6. VS Code for software development
    ```
 
-## Hardware Connections
+## HARDWARE CONNECTIONS
+ LED Connections: 
+   * Positive end (Anode) connected to GPIO Pin 6 of VSDSquadron Mini.
+   * Positive end (Anode) connected to GPIO Pin 5 of VSDSquadron Mini.
+   * Positive end (Anode) connected to GPIO Pin 4 of VSDSquadron Mini.
+   * Negative end (Cathode) connected to GND pin of VSDSquadron Mini.
    
+      
 ## How to Program 
 
   
-## Application Video
+## APPLICATION VIDEO
+
+https://github.com/ridhikapila27/vsdsquadron-mini-internship/assets/72308639/34f7a3e4-2e81-4757-8e5e-17c0278fb237
+
+
+
+
