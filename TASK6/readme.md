@@ -25,8 +25,67 @@ This project makes use of LED lights for indication purpose and a VSD Squadron M
    * Negative end (Cathode) connected to GND pin of VSDSquadron Mini.
    
       
-## How to Program 
+## HOW TO PROGRAM
+```
+#include <ch32v00x.h>
+#include <debug.h>
 
+#define BLINKY_GPIO_PORT GPIOD
+#define Led1 GPIO_Pin_6
+#define Led2 GPIO_Pin_5
+#define Led3 GPIO_Pin_4
+#define BLINKY_CLOCK_ENABLE RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE)
+
+void NMI_Handler(void) _attribute_((interrupt("WCH-Interrupt-fast")));
+void HardFault_Handler(void) _attribute_((interrupt("WCH-Interrupt-fast")));
+void Delay_Init(void);
+void Delay_Ms(uint32_t n);
+
+int main(void)
+{
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+    SystemCoreClockUpdate();
+    Delay_Init();
+
+    GPIO_InitTypeDef GPIO_InitStructure = {0};
+
+    BLINKY_CLOCK_ENABLE;
+    GPIO_InitStructure.GPIO_Pin = Led1 | Led2 | Led3;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(BLINKY_GPIO_PORT, &GPIO_InitStructure);
+
+    while (1)
+    {
+        // LED1 ON
+        GPIO_WriteBit(BLINKY_GPIO_PORT, Led1, Bit_SET);
+        Delay_Ms(2500);
+        // LED1 OFF
+        GPIO_WriteBit(BLINKY_GPIO_PORT, Led1, Bit_RESET);
+
+        // LED2 ON
+        GPIO_WriteBit(BLINKY_GPIO_PORT, Led2, Bit_SET);
+        Delay_Ms(1000);
+        // LED2 OFF
+        GPIO_WriteBit(BLINKY_GPIO_PORT, Led2, Bit_RESET);
+
+        // LED3 ON
+        GPIO_WriteBit(BLINKY_GPIO_PORT, Led3, Bit_SET);
+        Delay_Ms(2500);
+        // LED3 OFF
+        GPIO_WriteBit(BLINKY_GPIO_PORT, Led3, Bit_RESET);
+		
+    }
+}
+
+void NMI_Handler(void) {}
+void HardFault_Handler(void)
+{
+    while (1)
+    {
+    }
+}
+```
   
 ## APPLICATION VIDEO
 
