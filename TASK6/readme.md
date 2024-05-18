@@ -20,11 +20,7 @@ The main objective of this traffic light controller is to provide sophisticated 
    ```
 
 ## HARDWARE CONNECTIONS
- LED Connections: 
-   * Positive end (Anode) of LED 1 connected to GPIO Pin 6 of VSDSquadron Mini.
-   * Positive end (Anode) of LED 2 connected to GPIO Pin 5 of VSDSquadron Mini.
-   * Positive end (Anode) of LED 3 connected to GPIO Pin 4 of VSDSquadron Mini.
-   * Negative end (Cathode) connected to GND pin of VSDSquadron Mini.
+
    
       
 ## HOW TO PROGRAM
