@@ -1,6 +1,6 @@
-# TRAFFIC LIGHT CONTROLLER
+# SMART TRAFFIC LIGHT CONTROLLER 
 ## OVERVIEW
-This project makes use of LED lights for indication purpose and a VSD Squadron Mini development board is used for auto changing of signal at specified range of time interval. LED lights gets automatically turns on and off by making corresponding port pin of the board “HIGH”. The main objective of this traffic light controller is to provide sophisticated control and coordination to confirm that traffic moves as smoothly and safely as possible.
+The main objective of this traffic light controller is to provide sophisticated control and coordination to confirm that traffic moves as smoothly and safely as possible. To ensure the safety of pedestrians, a manual switch (IR sensor) is used to halt the busy moving traffic in case of any emergency. This project makes use of LED lights and IR sensor for indication purpose and a VSD Squadron Mini development board is used for auto changing of signal at specified range of time interval. 
 
 ## COMPONENTS REQUIRED
    ```
@@ -8,13 +8,15 @@ This project makes use of LED lights for indication purpose and a VSD Squadron M
 
    2. LEDs (3): Depicting red yellow and green light
 
-   3. Jumper wires
+   3. IR sensor
 
-   4. Breadboard
+   4. Jumper wires
 
-   5. Platform IO
+   5. Breadboard
 
-   6. VS Code for software development
+   6. Platform IO
+
+   7. VS Code for software development
    ```
 
 ## HARDWARE CONNECTIONS
@@ -30,16 +32,20 @@ This project makes use of LED lights for indication purpose and a VSD Squadron M
 #include <ch32v00x.h>
 #include <debug.h>
 
-#define BLINKY_GPIO_PORT GPIOD
-#define Led1 GPIO_Pin_6
-#define Led2 GPIO_Pin_5
-#define Led3 GPIO_Pin_4
-#define BLINKY_CLOCK_ENABLE RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE)
+#define TRAFFIC_GPIO_PORT GPIOD
+#define RED_LED GPIO_Pin_6
+#define YELLOW_LED GPIO_Pin_5
+#define GREEN_LED GPIO_Pin_4
+#define SWITCH_PIN GPIO_Pin_2   //IR sensor
 
-void NMI_Handler(void) _attribute_((interrupt("WCH-Interrupt-fast")));
-void HardFault_Handler(void) _attribute_((interrupt("WCH-Interrupt-fast")));
+#define TRAFFIC_CLOCK_ENABLE RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE)
+
+void NMI_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
+void HardFault_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
 void Delay_Init(void);
 void Delay_Ms(uint32_t n);
+
+void handle_switch_press(void);
 
 int main(void)
 {
@@ -49,33 +55,85 @@ int main(void)
 
     GPIO_InitTypeDef GPIO_InitStructure = {0};
 
-    BLINKY_CLOCK_ENABLE;
-    GPIO_InitStructure.GPIO_Pin = Led1 | Led2 | Led3;
+    TRAFFIC_CLOCK_ENABLE;
+
+    // Initialize traffic light LEDs
+    GPIO_InitStructure.GPIO_Pin = RED_LED | YELLOW_LED | GREEN_LED;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(BLINKY_GPIO_PORT, &GPIO_InitStructure);
+    GPIO_Init(TRAFFIC_GPIO_PORT, &GPIO_InitStructure);
+
+    // Initialize switch pin
+    GPIO_InitStructure.GPIO_Pin = SWITCH_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; // Input with pull-up
+    GPIO_Init(TRAFFIC_GPIO_PORT, &GPIO_InitStructure);
 
     while (1)
     {
-        // LED1 ON
-        GPIO_WriteBit(BLINKY_GPIO_PORT, Led1, Bit_SET);
-        Delay_Ms(2500);
-        // LED1 OFF
-        GPIO_WriteBit(BLINKY_GPIO_PORT, Led1, Bit_RESET);
+        if (GPIO_ReadInputDataBit(TRAFFIC_GPIO_PORT, SWITCH_PIN) == 0) // Switch pressed
+        {
+            handle_switch_press();
+        }
+        else
+        {
+            // Green light on
+            GPIO_WriteBit(TRAFFIC_GPIO_PORT, GREEN_LED, Bit_SET);
+            for (int i = 0; i < 5000; i++)
+            {
+                Delay_Ms(1);
+                if (GPIO_ReadInputDataBit(TRAFFIC_GPIO_PORT, SWITCH_PIN) == 0) 
+                {
+                    handle_switch_press();
+                    break;
+                }
+            }
+            GPIO_WriteBit(TRAFFIC_GPIO_PORT, GREEN_LED, Bit_RESET);
 
-        // LED2 ON
-        GPIO_WriteBit(BLINKY_GPIO_PORT, Led2, Bit_SET);
-        Delay_Ms(1000);
-        // LED2 OFF
-        GPIO_WriteBit(BLINKY_GPIO_PORT, Led2, Bit_RESET);
+            // Yellow light on
+            GPIO_WriteBit(TRAFFIC_GPIO_PORT, YELLOW_LED, Bit_SET);
+            for (int i = 0; i < 2000; i++)
+            {
+                Delay_Ms(1);
+                if (GPIO_ReadInputDataBit(TRAFFIC_GPIO_PORT, SWITCH_PIN) == 0) 
+                {
+                    handle_switch_press();
+                    break;
+                }
+            }
+            GPIO_WriteBit(TRAFFIC_GPIO_PORT, YELLOW_LED, Bit_RESET);
 
-        // LED3 ON
-        GPIO_WriteBit(BLINKY_GPIO_PORT, Led3, Bit_SET);
-        Delay_Ms(2500);
-        // LED3 OFF
-        GPIO_WriteBit(BLINKY_GPIO_PORT, Led3, Bit_RESET);
-		
+            // Red light on
+            GPIO_WriteBit(TRAFFIC_GPIO_PORT, RED_LED, Bit_SET);
+            for (int i = 0; i < 5000; i++)
+            {
+                Delay_Ms(1);
+                if (GPIO_ReadInputDataBit(TRAFFIC_GPIO_PORT, SWITCH_PIN) == 0) 
+                {
+                    handle_switch_press();
+                    break;
+                }
+            }
+            GPIO_WriteBit(TRAFFIC_GPIO_PORT, RED_LED, Bit_RESET);
+        }
     }
+}
+
+void handle_switch_press(void)
+{
+    // Turn off all LEDs
+    GPIO_WriteBit(TRAFFIC_GPIO_PORT, RED_LED, Bit_RESET);
+    GPIO_WriteBit(TRAFFIC_GPIO_PORT, YELLOW_LED, Bit_RESET);
+    GPIO_WriteBit(TRAFFIC_GPIO_PORT, GREEN_LED, Bit_RESET);
+
+    // Turn on yellow LED for 1 second
+    GPIO_WriteBit(TRAFFIC_GPIO_PORT, YELLOW_LED, Bit_SET);
+    Delay_Ms(1000);
+    GPIO_WriteBit(TRAFFIC_GPIO_PORT, YELLOW_LED, Bit_RESET);
+
+    // Turn on red LED for 3 seconds
+    GPIO_WriteBit(TRAFFIC_GPIO_PORT, RED_LED, Bit_SET);
+    Delay_Ms(3000);
+    GPIO_WriteBit(TRAFFIC_GPIO_PORT, RED_LED, Bit_RESET);
 }
 
 void NMI_Handler(void) {}
@@ -85,11 +143,14 @@ void HardFault_Handler(void)
     {
     }
 }
+
 ```
   
 ## APPLICATION VIDEO
 
-https://github.com/ridhikapila27/vsdsquadron-mini-internship/assets/72308639/34f7a3e4-2e81-4757-8e5e-17c0278fb237
+https://github.com/ridhikapila27/vsdsquadron-mini-internship/assets/72308639/16f9a9ab-b6fb-42f5-8846-87536bf02578
+
+
 
 
 
