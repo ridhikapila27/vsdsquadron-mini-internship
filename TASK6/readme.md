@@ -21,7 +21,7 @@ The main objective of this traffic light controller is to provide sophisticated 
 
 ## HARDWARE CONNECTIONS
 
-  <img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK6/TRAFFIC.JPG?raw=true"/>
+  <img src= "https://github.com/ridhikapila27/vsdsquadron-mini-internship/blob/main/TASK6/SCHEMATIC.JPG?raw=true"/>
       
 ## HOW TO PROGRAM
 ```
