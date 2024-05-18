@@ -1,6 +1,6 @@
 # SMART TRAFFIC LIGHT CONTROLLER 
 ## OVERVIEW
-The main objective of this traffic light controller is to provide sophisticated control and coordination to confirm that traffic moves as smoothly and safely as possible. To ensure the safety of pedestrians, a manual switch (IR sensor) is used to halt the busy moving traffic in case of any emergency. This project makes use of LED lights and IR sensor for indication purpose and a VSD Squadron Mini development board is used for auto changing of signal at specified range of time interval. 
+The main objective of this traffic light controller is to provide sophisticated control and coordination to confirm that traffic moves as smoothly and safely as possible. To ensure the safety of pedestrians, a manual switch (IR sensor) is used to halt the busy moving traffic in case of any emergency by switching the green light back to red light for a few seconds. This project makes use of LED lights and IR sensor for indication purpose and a VSD Squadron Mini development board is used for auto changing of signal at specified range of time interval. 
 
 ## COMPONENTS REQUIRED
    ```
